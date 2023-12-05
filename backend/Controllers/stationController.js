@@ -1,7 +1,7 @@
 import Station from '../models/StationSchema.js'
 
 export const addStation = async (req, res) => {
-    const {name, address, price, type, slot, bio} = req.body
+    const {name, address, photo, price, type, slot, bio} = req.body
     try{
         let station = null
         station = await Station.findOne({name})
@@ -9,7 +9,7 @@ export const addStation = async (req, res) => {
             return res.status(400).json({message:'Station alrady exist'})
         }
         station = new Station({
-            name, address, price, type, slot, bio
+            name, photo, address, price, type, slot, bio
         })
         await station.save()
         res.status(200).json({success:true, message:'Station successfully created'})

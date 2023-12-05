@@ -25,7 +25,7 @@ const StationSchema = new mongoose.Schema({
     type: Array,
   },*/
 
-  bio: { type: String, maxLength: 50 },
+  bio: { type: String},
   /*about: { type: String },
   timeSlots: { type: Array },
   reviews: [{ type: mongoose.Types.ObjectId, ref: "Review" }],
