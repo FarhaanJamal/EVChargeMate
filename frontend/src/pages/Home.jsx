@@ -54,7 +54,7 @@ const Home = () => {
                   15+
                 </h2>
                 <span className='w-[100px] h-2 bg-purpleColor rounded-full block mt-[-14px]'></span>
-                <p className='text__para'>Convenitent Location</p>
+                <p className='text__para'>Convenient Location</p>
               </div>
               <div>
                 <h2 className='text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
