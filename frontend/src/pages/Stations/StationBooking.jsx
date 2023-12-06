@@ -36,7 +36,17 @@ const StationBooking = () => {
     startTime: '',
     endTime: ''
   });
-  const handleInputChange = e=>{
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+  useEffect(() => {
+    const isFilled =
+      formData.type !== '' &&
+      formData.slot !== '' &&
+      formData.slotDate !== '' &&
+      formData.startTime !== '' &&
+      formData.endTime !== '';
+    setAllFieldsFilled(isFilled);
+  }, [formData]);
+  const handleInputChange = (e)=>{
     const {name, value} = e.target
     if (name==='type'){
       const selectedIndex = e.target.selectedIndex
@@ -211,7 +221,7 @@ const StationBooking = () => {
           <p className='text__para mt-6 font-semibold text-headingColor'>
             Check Availablity:
           </p>
-          <button onClick={handleCheckNowClick} className='btn px-2 w-full rounded-md mt-6'>
+          <button onClick={handleCheckNowClick} className={`btn px-2 w-full rounded-md mt-6 ${!allFieldsFilled ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={!allFieldsFilled || loadingHashCheck}>
             {loadingHashCheck ? <HashLoader size={35} color="#ffffff"/> : 'Check Now'}
           </button> 
           <div className="mt-[30px]">
