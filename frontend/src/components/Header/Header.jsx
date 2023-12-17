@@ -47,14 +47,14 @@ const Header = () => {
     menuRef.current.classList.toggle("show__menu")
   }
   return <header className='header flex items-center' ref={headerRef}>
-    <div className='container'>
+    <div className='container px-3'>
       <div className='flex items-center ml-[-10px] justify-between'>
         {/*logo*/}
-        <div>
+        <Link to='/'>
           <img src={logo} alt=''/>
-        </div>
+        </Link>
         {/*menu*/}
-        <div className='navigation' ref={menuRef} onClick={toggleMenu}>
+        <div className='navigation min-w-fit' ref={menuRef} onClick={toggleMenu}>
           <ul className='menu flex items-center gap-5 md:gap-3 lg:gap-[2.7rem]'>
             {
               navLinks.map((link,index)=><li key={index}>
@@ -66,10 +66,12 @@ const Header = () => {
           </ul>
         </div>
         {/*nav right*/}
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-2 min-w-fit pl-2'>
           {
-            token && user ? <div className='flex flex-row m-0 gap-4 items-center'> 
-              <h1>Hi, {user?.name}</h1>
+            token && user ? <div className='flex flex-row m-0 gap-2 items-center'> 
+              <div className='min-w-fit'>
+                <h1 className='text-[14px] sm:text-[18px] md:text-[18px] lg:text-[18px]'>Hi, {user?.name}</h1>
+              </div>
               <div className='min-w-fit'>
                 <Link to='/login'>
                   <button onClick={handleLogout} className='bg-primaryColor py-2 px-4 text-[14px] sm:px-6 sm:text-[18px] md:px-6 md:text-[18px] lg:px-6 lg:text-[18px] text-white font-[600] h-[44px] flex items-center justify-center rounded-[30px]'>
@@ -90,7 +92,6 @@ const Header = () => {
               </Link>
             </div>
           }
-          
           <span className='md:hidden' onClick={toggleMenu}>
             <BiMenu className="w-6 h-6 cursor-pointer"/>
           </span>

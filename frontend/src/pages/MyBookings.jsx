@@ -36,13 +36,13 @@ const MyBookings = () => {
         {!loading && !error && (
         <div style={{ overflowX: 'auto', maxWidth: '100%', whiteSpace: 'nowrap' }}>
           <div>
-            <div className='mt-3 py-0.5 min-w-[428px] flex lg:text-lg md:text-lg text-[14px]'>
-              <div className='w-52'>
+            <div className='mt-3 py-0.5 min-w-[560px] flex lg:text-lg md:text-lg text-[14px]'>
+              <div className='w-72 pl-6'>
                 <h3 className='text-headingColor text-[20px] leading-9 mt-3 font-bold'>
                   Staion Name
                 </h3>
               </div>
-              <div className='w-28 flex justify-center'>
+              <div className='w-32 flex justify-center'>
                 <h3 className='text-headingColor text-[20px] leading-9 mt-3 font-bold'>
                   Type
                 </h3>
@@ -52,12 +52,12 @@ const MyBookings = () => {
                   Slot
                 </h3>
               </div>
-              <div className='w-28 flex justify-center'>
+              <div className='w-36 flex justify-center'>
                 <h3 className='text-headingColor text-[20px] leading-9 mt-3 font-bold'>
                   Date
                 </h3>
               </div>
-              <div className='w-28 flex justify-center'>
+              <div className='w-32 flex justify-center'>
                 <h3 className='text-headingColor text-[20px] leading-9 mt-3 font-bold'>
                   Timing
                 </h3>
@@ -65,13 +65,13 @@ const MyBookings = () => {
             </div>
             <div className='mt-5'>
               {bookings.map(booking => (
-                <div key={booking.id} className="mt-3 py-0.5 min-w-[428px] flex lg:text-lg md:text-lg text-[14px]">
-                  <div className='w-52'>
+                <div key={booking._id} className="mt-3 py-0.5 min-w-[560px] flex lg:text-lg md:text-lg text-[14px]">
+                  <div className='w-72'>
                     <h3 >
                       {booking.stationName}
                     </h3>
                   </div>
-                  <div className='w-28 flex justify-center'>
+                  <div className='w-32 flex justify-center'>
                     <h3 >
                       {booking.type}
                     </h3>
@@ -81,12 +81,12 @@ const MyBookings = () => {
                       {booking.slot}
                     </h3>
                   </div>
-                  <div className='w-28 flex justify-center'>
+                  <div className='w-36 flex justify-center'>
                     <h3 >
                       {new Date(booking.slotDate).toLocaleDateString('en-GB')}
                     </h3>
                   </div>
-                  <div className='w-28 flex justify-center'>
+                  <div className='w-32 flex justify-center'>
                     <h3 >
                       {booking.startTime} - {booking.endTime}
                     </h3>
@@ -95,7 +95,7 @@ const MyBookings = () => {
               ))}
             </div>
           </div>
-          <div className='flex text-[14px] mt-5 p-5 items-center justify-center w-full'>
+          <div className='flex text-[14px] mt-5 p-5 items-center justify-center w-min-[560px]'>
             <h2 >**Timings are in 24 hrs format</h2>
           </div>
         </div>
