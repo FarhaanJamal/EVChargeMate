@@ -145,6 +145,7 @@ const StationBooking = () => {
                 <div className="flex-1 mb-5 mr-5">
                   <label htmlFor="type" className='text-[14px] text-primaryColor leading-6 md:text-[15px] lg:max-w-[390px]'>Select a type</label>
                   <select name="type" id="type" onChange={handleInputChange} value={formData.type} className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" required>
+                    <option value="">--Select--</option>
                     {type.map((typeItem, index) => (
                       <option key={index} value={typeItem}>
                         {typeItem}
@@ -155,6 +156,7 @@ const StationBooking = () => {
                 <div className="flex-1 mb-5 mr-5">
                   <label htmlFor="slot" className='text-[14px] text-primaryColor leading-6 md:text-[15px] lg:max-w-[390px]'>Select a slot</label>
                   <select name="slot" id="slot" onChange={handleInputChange} value={formData.slot} className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" required>
+                  <option value="">--Select--</option>
                     {Array.from({ length: formData.slot }, (_, index) => index + 1).map((slotItem) => (
                       <option key={slotItem} value={slotItem}>
                         {slotItem}
